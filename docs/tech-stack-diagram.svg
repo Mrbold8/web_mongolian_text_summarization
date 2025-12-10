@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="360" viewBox="0 0 820 360" font-family="'Inter', 'Segoe UI', sans-serif">
+  <style>
+    .title { font-size: 20px; font-weight: 600; fill: #0f172a; }
+    .box { fill: #fff; stroke: #cbd5f5; stroke-width: 2; rx: 14; }
+    .box text { font-size: 14px; fill: #0f172a; }
+    .label { font-size: 12px; fill: #475569; }
+    .arrow { stroke: #94a3b8; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto" fill="#94a3b8">
+      <path d="M0,0 L10,4 L0,8 Z" />
+    </marker>
+  </defs>
+
+  <text x="410" y="36" text-anchor="middle" class="title">NUM Summarizer Tech Stack</text>
+
+  <!-- Browser UI -->
+  <rect class="box" x="60" y="70" width="260" height="210" fill="#ecfeff" stroke="#06b6d4" />
+  <text x="190" y="100" text-anchor="middle" font-size="16" font-weight="600" fill="#0369a1">Browser UI</text>
+  <text x="80" y="125" class="label">• Next.js 16 App Router</text>
+  <text x="80" y="145" class="label">• React 19 + Lucide icons</text>
+  <text x="80" y="165" class="label">• TailwindCSS styles</text>
+  <text x="80" y="185" class="label">• Client state in `app/page.tsx`</text>
+  <text x="80" y="205" class="label">• Calls `/api/summarize`</text>
+  <text x="80" y="225" class="label">• Model/task selection UI</text>
+
+  <!-- API Handler -->
+  <rect class="box" x="310" y="120" width="220" height="180" fill="#eef2ff" stroke="#4f46e5" />
+  <text x="420" y="150" text-anchor="middle" font-size="16" font-weight="600" fill="#312e81">Next.js Route Handler</text>
+  <text x="330" y="175" class="label">• `src/app/api/summarize/route.ts`</text>
+  <text x="330" y="195" class="label">• Validates model + task</text>
+  <text x="330" y="215" class="label">• Loads `.env.local` endpoints</text>
+  <text x="330" y="235" class="label">• Injects `HF_API_TOKEN`</text>
+  <text x="330" y="255" class="label">• Formats HF payload per task</text>
+
+  <!-- External Services -->
+  <rect class="box" x="560" y="80" width="220" height="220" fill="#fefce8" stroke="#eab308" />
+  <text x="670" y="110" text-anchor="middle" font-size="16" font-weight="600" fill="#854d0e">External Services</text>
+  <text x="580" y="135" class="label">• Hugging Face Inference</text>
+  <text x="580" y="155" class="label">  - mt5-small (default)</text>
+  <text x="580" y="175" class="label">  - mt5-base / multi-task</text>
+  <text x="580" y="195" class="label">  - mBART-50</text>
+  <text x="580" y="215" class="label">  - GPT-2 Mongolian</text>
+  <text x="580" y="235" class="label">• Configured via `HF_SUMMARIZER_ENDPOINT*`</text>
+  <text x="580" y="255" class="label">• Optional backend at `NEXT_PUBLIC_API_URL`</text>
+
+  <!-- arrows -->
+  <line class="arrow" x1="320" y1="180" x2="310" y2="180" />
+  <line class="arrow" x1="320" y1="220" x2="310" y2="220" />
+  <line class="arrow" x1="530" y1="210" x2="560" y2="210" />
+
+  <text x="320" y="170" class="label" text-anchor="start">fetch /api/summarize</text>
+  <text x="530" y="200" class="label" text-anchor="end">POST HF endpoint</text>
+</svg>

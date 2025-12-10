@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# Tells pnpm which folders belong to monorepo
+# can link local packages 

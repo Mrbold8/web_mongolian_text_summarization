@@ -1,0 +1,11 @@
+{
+  "name": "@mn/contract",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}

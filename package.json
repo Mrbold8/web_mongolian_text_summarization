@@ -1,0 +1,11 @@
+{
+	"name": "web_app_v1",
+	"private": true,
+	"scripts": {
+		"dev:web": "pnpm --filter web dev",
+		"dev": "pnpm dev:web"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.0"
+	}
+}
