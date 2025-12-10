@@ -23,7 +23,9 @@ type TaskConfig = {
   };
 };
 
-const TASK_CONFIG = {
+type TaskType = 'summary' | 'title' | 'keywords';
+
+const TASK_CONFIG: Record<TaskType, TaskConfig> = {
   summary: {
     parameters: {
       max_length: 180,
@@ -33,7 +35,7 @@ const TASK_CONFIG = {
   title: {
     prefix: 'title:',
     prompt:
-      'Generate a concise Mongolian title that captures the main idea of the following text.',
+      '',
     parameters: {
       max_length: 60,
       min_length: 42,
@@ -42,15 +44,13 @@ const TASK_CONFIG = {
   keywords: {
     prefix: 'keywords:',
     prompt:
-      'Extract 5-10 concise Mongolian keywords from the following text. Each keyword should be 3 words. Return only the keywords, comma-separated.',
+      'Extract 5-10 Mongolian keywords from the following text. Each keyword should be 3 words. Return only the keywords, comma-separated.',
     parameters: {
       max_length: 80,
       min_length: 16,
     },
   },
-} satisfies Record<'summary' | 'title' | 'keywords', TaskConfig>;
-
-type TaskType = keyof typeof TASK_CONFIG;
+};
 
 const DEFAULT_TASK: TaskType = 'summary';
 
